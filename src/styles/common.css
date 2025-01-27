@@ -1,0 +1,45 @@
+:root {
+  --font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+
+  font-family: var(--font-family);
+  font-weight: normal;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+body {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 1rem;
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+  
+}

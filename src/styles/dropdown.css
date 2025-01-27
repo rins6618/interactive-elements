@@ -1,0 +1,131 @@
+.dropdown {
+  position: relative;
+  align-self: center;
+  display: flex;
+
+  align-items: center;
+  
+  width: 18ch;
+  max-height: 18ch;
+  min-height: 2rem;
+  margin: 0.5rem;
+}
+
+.dropdown .textbox {
+  position: absolute;
+  left: calc(-0.5rem - 2px);
+  top: 0;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  user-select: none;
+  white-space: nowrap; 
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #ccc;
+  background: #fff;
+  
+  box-sizing: content-box;
+  padding: 0.5rem;
+  height: 1rem;
+  
+  transition: z-index 0s .2s;
+  cursor: pointer;
+  z-index: 2;
+
+}
+
+.dropdown .textbox:hover,
+.dropdown:has(.content.active) .textbox {
+  background-color: #f8f8f8;
+  border-color: #999;
+} 
+
+.dropdown .textbox::after {
+  position: absolute;
+  width: 1ch;
+  left: calc(100% - 1ch - 2px - 0.5rem);
+  content: "⮝";
+  color: #ccc;
+}
+
+.dropdown:has(.content.active) .textbox::after {
+  content: "⮟";
+  color: #aaa;
+}
+
+
+.dropdown:has(.content.active) .textbox {
+  transition: z-index 0s .0s;
+  z-index: 4;
+}
+
+.dropdown .content.active {
+  max-height: 18ch;
+  padding-top: calc(1rem + 0.9rem + 2px);
+  pointer-events: all;
+  transition: padding-top .2s, max-height .2s, z-index 0s .0s;
+  z-index: 3;
+}
+
+.dropdown .content {
+  pointer-events: none;
+  position: absolute;
+  align-self: flex-start;
+  
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  width: 100%;
+  max-height: 0;
+  
+  transition: padding-top .2s, max-height .2s, z-index 0s .2s;
+
+  border-radius: 0.5rem;
+  border: 2px solid #ccc;
+  
+  background: #f9f9f9;
+
+  overflow-y: auto;
+  
+  /* height + padding (ever so slight overlap) + border */
+  padding-top: 0;
+  
+  z-index: 1;
+}
+
+.dropdown .content::-webkit-scrollbar {
+  width: 8px;
+  background-color: #eee;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.dropdown .content::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #ccc;
+}
+.dropdown .content::-webkit-scrollbar-thumb:window-inactive {
+  background: #bbb;
+}
+
+.dropdown .content li {
+  padding: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.dropdown .content li:first-child {
+  padding-top: 1rem;
+}
+
+.dropdown .content li:hover {
+  background: #eee;
+}
+
