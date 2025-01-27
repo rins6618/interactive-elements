@@ -1,5 +1,6 @@
 import './styles/common.css';
 import DropdownMenu from './DropdownMenu';
+import ImageCarousel from './ImageCarousel';
 
 console.log('Hello, world!');
 
@@ -11,3 +12,9 @@ dropdownElements.forEach((elem) => {
   dropdown.getActiveElement();
   // dropdown.log();
 });
+
+const carousel = new ImageCarousel(document.querySelector('.carousel'));
+setInterval(() => {
+  console.log('timeout!');
+  carousel.moveSteps();
+}, 3000);

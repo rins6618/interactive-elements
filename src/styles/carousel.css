@@ -1,0 +1,31 @@
+.carousel {
+  position: relative;
+  align-self: center;
+  height: 24rem;
+  --img-width: 80ch;
+  min-width: var(--img-width);
+  max-width: var(--img-width);
+  overflow: hidden;
+  border-radius: .5rem;
+}
+
+.carousel .content {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: var(--img-width);
+  transition: right .5s cubic-bezier(.24,1,.79,1);
+  right: 0;
+}
+
+.carousel .content img {
+  flex: none;
+  object-fit: cover;
+  width: var(--img-width);
+}
+
+.carousel .content:hover {
+  position: absolute;
+  
+  right: var(--img-width);
+} 
