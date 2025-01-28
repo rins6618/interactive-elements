@@ -1,6 +1,7 @@
 import './styles/common.css';
 import DropdownMenu from './DropdownMenu';
 import ImageCarousel from './ImageCarousel';
+import 'iconify-icon';
 
 console.log('Hello, world!');
 
@@ -13,8 +14,5 @@ dropdownElements.forEach((elem) => {
   // dropdown.log();
 });
 
+// eslint-disable-next-line no-unused-vars
 const carousel = new ImageCarousel(document.querySelector('.carousel'));
-setInterval(() => {
-  console.log('timeout!');
-  carousel.moveSteps();
-}, 3000);
